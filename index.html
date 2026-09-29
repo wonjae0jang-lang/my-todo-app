@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e7f1d2" />
+    <title>Little Snake Club</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topline">
+        <span class="club-mark" aria-hidden="true">S</span>
+        <span class="edition">ARCADE No. 01</span>
+        <span class="live-indicator"><span></span> READY TO PLAY</span>
+      </header>
+
+      <section class="game-heading" aria-labelledby="game-title">
+        <div>
+          <p class="eyebrow">A LITTLE GAME OF GROWING</p>
+          <h1 id="game-title">Snake<span>!</span></h1>
+        </div>
+        <p class="heading-note">One bite at a time.<br />How long can you grow?</p>
+      </section>
+
+      <section class="scoreboard" aria-label="게임 점수">
+        <div class="score-readout">
+          <span class="score-label">SCORE</span>
+          <strong id="score">000</strong>
+        </div>
+        <div class="score-divider" aria-hidden="true"></div>
+        <div class="score-readout best-readout">
+          <span class="score-label">PERSONAL BEST</span>
+          <strong id="best-score">000</strong>
+        </div>
+        <div class="score-divider" aria-hidden="true"></div>
+        <div class="score-readout level-readout">
+          <span class="score-label">LEVEL</span>
+          <strong id="level">01</strong>
+        </div>
+        <span class="score-stamp" aria-hidden="true">+10<br />EACH</span>
+      </section>
+
+      <section class="board-wrap" aria-label="스네이크 게임">
+        <canvas id="game-board" width="400" height="400" aria-label="400 x 400 픽셀 스네이크 게임 보드"></canvas>
+        <div class="board-status" id="board-status" aria-live="polite">
+          <span class="status-mark" aria-hidden="true">●</span>
+          <span id="status-text">READY</span>
+        </div>
+      </section>
+
+      <fieldset class="difficulty" id="difficulty">
+        <legend class="score-label">DIFFICULTY</legend>
+        <div class="difficulty-options">
+          <label><input type="radio" name="difficulty" value="200" /><span>쉬움</span></label>
+          <label><input type="radio" name="difficulty" value="150" checked /><span>보통</span></label>
+          <label><input type="radio" name="difficulty" value="100" /><span>어려움</span></label>
+          <label><input type="radio" name="difficulty" value="50" /><span>매우 어려움</span></label>
+        </div>
+      </fieldset>
+
+      <div class="controls-row">
+        <div class="button-group">
+          <button id="start-button" class="start-button" type="button">
+            <span class="button-icon" aria-hidden="true">▶</span>
+            <span>게임 시작</span>
+          </button>
+          <button id="pause-button" class="pause-button" type="button" disabled>
+            <span class="button-icon" aria-hidden="true">❚❚</span>
+            <span>일시정지</span>
+          </button>
+        </div>
+        <p class="key-hint"><span>↑</span><span>←</span><span>↓</span><span>→</span> TO MOVE</p>
+      </div>
+
+      <footer class="bottomline">
+        <span>STAY SHARP. KEEP GROWING.</span>
+        <span class="grid-note">20 × 20 GRID</span>
+      </footer>
+    </main>
+  </body>
+</html>
